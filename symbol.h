@@ -17,9 +17,9 @@ enum Unit { _id = 200, _num, _op , _break, _con, _print};
 typedef struct symbolTag
 {
 	int sym;
-	int left;				// line number
-	int right;				// postion in the line
-	char value[MAX_NAME];	// name
+	int left;			// line number
+	int right;			// postion in the line
+	char value[MAX_NAME];		// name
 
 }symbol;
 
