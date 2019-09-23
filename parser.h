@@ -30,15 +30,15 @@ void Scanner(char *input);
 
 symbol *token, *t_token;	// current token and previous token
 vector<string> errors;		// error messages
-stack<level*> fun;			// current levels
+stack<level*> fun;		// current levels
 map<int, int> domain;		// domain name, domain number
 vector<record*> arra;		// identifiers
-deque<func*> opera;			// program flow
+deque<func*> opera;		// program flow
 
-int whether = 0;			// checking status
-int errorCount = 0;			// number of errors
+int whether = 0;		// checking status
+int errorCount = 0;		// number of errors
 int bracket[6] = { 0 };		// 6 kinds of brackets' numbers: '(', ')', '[', ']', '{', '}'
-int theend = 1;				// check if exist an expression outside 'main'
+int theend = 1;			// check if exist an expression outside 'main'
 
 // Print all error messages
 void print() {
@@ -78,7 +78,7 @@ void Error(int kind) {
 		sprintf(temp, "%4d: line%d:\t '%s' %s\n", errorCount, token->left, token->value, errmsgs[kind]);
 	else if (kind == 4)	// expect semicolon
 		sprintf(temp, "%4d: line%d:\t %s\n", errorCount, t_token->left, errmsgs[kind]);
-	else				// other errors
+	else			// other errors
 		sprintf(temp, "%4d: line%d:\t %s\n", errorCount, token->left, errmsgs[kind]);
 
 	string tempp(temp);
