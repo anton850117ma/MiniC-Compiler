@@ -14,10 +14,10 @@ void change(func *ptr, bool ch);
 void Begin(char* input);
 
 vector<pair<int, int>> area, atemp;		// domain name, domain order
-vector<syntax*> post, ans;				// postfix and temporary results
+vector<syntax*> post, ans;			// postfix and temporary results
 map<int, int> priority, ifrec;
 record *inreturn;						
-stack<func*>loop;						// temporary loop body
+stack<func*>loop;				// temporary loop body
 fstream fp;
 
 // Convert infix to postfix
@@ -35,13 +35,13 @@ void Postorder(string str) {
 		pos = str.find(" ", pos);
 		if (pos == -1)break;
 		temp = str.substr(++bound, pos - bound);
-		if (temp[0] == '#') {						// bound a number with + or -
+		if (temp[0] == '#') {				// bound a number with + or -
 			t_temp.assign(temp, 1, temp.size() - 1);
 			if (pretext == "100" || pretext == "101") post.push_back(recItem(_num, t_temp, stoi(pretext), 0));
 			else post.push_back(recItem(_num, t_temp, 0, 0));
 		}
 		else if (temp[0] >= 'a' && temp[0] <= 'z' ||
-			temp[0] >= 'A' && temp[0] <= 'Z') {		// bound an identifier with prefix(++ or -- or + or -)
+			temp[0] >= 'A' && temp[0] <= 'Z') {	// bound an identifier with prefix(++ or -- or + or -)
 			if (pretext == "100" || pretext == "101" || pretext == "4" || pretext == "5")
 				post.push_back(recItem(_id, temp, stoi(pretext), 0));
 			else post.push_back(recItem(_id, temp, 0, 0));
