@@ -37,9 +37,9 @@ symbol *newSymbol(int sym, int left, int right, char *value)
 // Identifier structure
 typedef struct Record {
 	
-	int d_name;				// domain name
+	int d_name;			// domain name
 	int d_order;			// domain order
-	int type;				// type
+	int type;			// type
 	string name;			// name
 	int value;
 	bool used;
@@ -62,8 +62,8 @@ record *newItem(int dname, int dorder, int var, char *inn )
 // Function structure
 typedef struct Function {
 	
-	int type;				// type of function
-	int number;				// time of type
+	int type;			// type of function
+	int number;			// time of type
 	string action;			// function body
 
 }func;
