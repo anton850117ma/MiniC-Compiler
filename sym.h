@@ -6,11 +6,11 @@
 #define symBNOT		3
 #define symPP		4
 #define symSS		5
-#define symMUL      6
-#define symDIV      7
+#define symMUL        6
+#define symDIV        7
 #define symMODE		8
-#define symADD      9
-#define symSUB      10	
+#define symADD        9
+#define symSUB        10	
 #define symBLS		11
 #define symBRS		12
 #define symBIG		13
